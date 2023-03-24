@@ -7,7 +7,8 @@ const ListsRickandMorty = () => {
     const [dataRick, setDataRick] = useState([])
     useEffect(() => {
         axios
-            .get("https://rickandmortyapi.com/api/location/")
+            .get("https://rickandmortyapi.com/api/character/")
+            // .then((resp) => console.log(resp.data))
             .then((resp) => setDataRick(resp.data))
             // .then((resp) => setDataRick(resp.data.results))
             .catch(error => console.error(error))
@@ -26,7 +27,6 @@ const ListsRickandMorty = () => {
                 <li> Anterior </li>
             </Link>
             <ul>
-
                 {
                     dataRick.results?.map(elem => (
                         <Link key={elem.id} to={`/List_Id/${elem.id}`} >
