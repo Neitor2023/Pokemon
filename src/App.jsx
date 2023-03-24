@@ -3,13 +3,14 @@ import {
     Routes,
     Route
 } from 'react-router-dom'
-import Nav from './components/Nav copy';
+import Nav from './components/Nav';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Projects from './pages/Projects';
 import Technologies from './pages/Technologies';
 import FooterComponent from './components/FooterComponent'
+import TeamDetail from './pages/TeamDetail';
 
 // import Nav from './components/Nav';
 
@@ -27,6 +28,9 @@ function App() {
                     <Route
                         path="/about"
                         element={<About />} />
+                    <Route
+                        path="/about/:name"
+                        element={<TeamDetail />} />
                     <Route
                         path="/contact"
                         element={<Contact />} />
