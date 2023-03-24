@@ -9,6 +9,10 @@ const Home = () => {
     navigate("/about")
   }
 
+  const listRickMorty = () => {
+    navigate("/ListsRickandMorty")
+  }
+
   const login = e => {
     if (value === "password") {
       navigate("/about/")
@@ -23,7 +27,7 @@ const Home = () => {
       <h1>Home! Bienvenido a nuestra plataforma!</h1>
       <Link to="/Contact">Contacto</Link><br />
       <Link to="/Characters">Characters</Link><br />
-
+      <button onClick={ listRickMorty } >Ir a lstado de Rick and Morty</button>
       <button onClick={ redirect } >Llevar a la seccion About</button>
 
       <form onSubmit={e => login(e)}>

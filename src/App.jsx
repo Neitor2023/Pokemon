@@ -11,9 +11,8 @@ import Projects from './pages/Projects';
 import Technologies from './pages/Technologies';
 import FooterComponent from './components/FooterComponent'
 import TeamDetail from './pages/TeamDetail';
-
-// import Nav from './components/Nav';
-
+import Characters from './pages/Characters';
+import ListsRickandMorty from './pages/ListsRickandMorty';
 
 function App() {
     return (
@@ -43,6 +42,12 @@ function App() {
                     <Route
                         path="/technologies"
                         element={<Technologies />} />
+                    <Route
+                        path='/characters'
+                        element={<Characters />} />
+                    <Route
+                        path='/listsRickandMorty'
+                        element={<ListsRickandMorty />} />
                 </Routes>
                 <FooterComponent />
             </div>

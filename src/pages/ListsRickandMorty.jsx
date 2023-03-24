@@ -11,7 +11,7 @@ const ListsRickandMorty = () => {
     
     return (
         <div>
-            
+            <h1>LISTADO DE RICK AND MORTY</h1>
         </div>
     );
 };
