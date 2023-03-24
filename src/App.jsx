@@ -47,10 +47,10 @@ function App() {
                         path='/characters'
                         element={<Characters />} />
                     <Route
-                        path='/rickMortyLists'
+                        path='/rickmortylists'
                         element={<RickMortyLists />} />
                     <Route
-                        path='/rickMortyLists/:id'
+                        path='/rickMortydetail/:id'
                         element={<RickMortyDetail />} />
                 </Routes>
                 <FooterComponent />

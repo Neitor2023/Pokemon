@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 
 const RickMortyLists = () => {
     const navigate = useNavigate();
-    const [dataRick, setDataRick] = useState([])
+    const [dataRick, setDataRick] = useState({})
     useEffect(() => {
         axios
             .get("https://rickandmortyapi.com/api/character/")
