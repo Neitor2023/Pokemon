@@ -29,7 +29,7 @@ const RickMortyLists = () => {
             <ul>
                 {
                     dataRick.results?.map(elem => (
-                        <Link key={elem.id} to={`/RickMortyDetail/${elem.id}`} >
+                        <Link key={elem.id} to={`/rickMorty/${elem.id}`} >
                             <li> {elem.name} </li>
                         </Link>
                     ))

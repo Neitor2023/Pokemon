@@ -19,7 +19,7 @@ const Home = () => {
       <h1>Home! Bienvenido a nuestra plataforma!</h1>
       <Link to="/Contact">Contacto</Link><br />
       <Link to="/Characters">Characters</Link><br />
-      <button onClick={ () => navigate ("/RickMortyLists") } >Ir a lstado de Rick and Morty</button>
+      <button onClick={ () => navigate ("/RickMorty") } >Ir a lstado de Rick and Morty</button>
       <button onClick={ () => navigate("/about") } >Llevar a la seccion About</button>
 
       <form onSubmit={e => login(e)}>

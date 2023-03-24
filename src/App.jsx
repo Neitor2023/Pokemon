@@ -7,8 +7,6 @@ import Nav from './components/Nav';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
-import Projects from './pages/Projects';
-import Technologies from './pages/Technologies';
 import FooterComponent from './components/FooterComponent'
 import TeamDetail from './pages/TeamDetail';
 import Characters from './pages/Characters';
@@ -35,22 +33,13 @@ function App() {
                         path="/contact"
                         element={<Contact />} />
                     <Route
-                        path="/projects"
-                        element={<Projects />} />
-                    <Route
-                        path="/projects/:id"
-                        element={<Projects />} />
-                    <Route
-                        path="/technologies"
-                        element={<Technologies />} />
-                    <Route
                         path='/characters'
                         element={<Characters />} />
                     <Route
-                        path='/rickmortylists'
+                        path='/rickmorty'
                         element={<RickMortyLists />} />
                     <Route
-                        path='/rickMortydetail/:id'
+                        path='/rickMorty/:id'
                         element={<RickMortyDetail />} />
                 </Routes>
                 <FooterComponent />
