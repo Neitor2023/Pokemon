@@ -1,26 +1,44 @@
-import { useState } from 'react'
-import './App.css'
 import {
-  HashRouter,
-  Routes,
-  Route
+    HashRouter,
+    Routes,
+    Route
 } from 'react-router-dom'
+import Home from './assets/pages/Home';
+import About from './assets/pages/About';
+import Contact from './assets/pages/Contact';
+import Projects from './assets/pages/Projects';
+import Technologies from './assets/pages/Technologies';
+import FooterComponent from './assets/components/FooterComponent';
+import Nav from './assets/components/Nav';
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <HashRouter>
-      <div className="App">
-        <h1>App</h1>
-      </div>
-      <Routes>
-        <Route path="/" element={<DefaultComponent />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/about/team" element={<Team />} />
-      </Routes>
-    </HashRouter>
-
-  )
+    return (
+        <HashRouter>
+            <div className='App'>
+                <Nav />
+                <Routes>
+                    <Route
+                        path="/"
+                        element={<Home />} />
+                    <Route
+                        path="/about"
+                        element={<About />} />
+                    <Route
+                        path="/contact"
+                        element={<Contact />} />
+                    <Route
+                        path="/projects"
+                        element={<Projects />} />
+                    <Route
+                        path="/projects/:id"
+                        element={<Projects />} />
+                    <Route
+                        path="/technologies"
+                        element={<Technologies />} />
+                </Routes>
+                <FooterComponent />
+            </div>
+        </HashRouter>
+    );
 }
-export default App
+export default App;
