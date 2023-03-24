@@ -21,7 +21,7 @@ const Home = () => {
   return (
     <div>
       <h1>Home! Bienvenido a nuestra plataforma!</h1>
-      <Link to="/Contact">Contacto</Link>
+      <Link to="/Contact">Contacto</Link><br />
 
       <button onClick={ redirect } >Llevar a la seccion About</button>
 
