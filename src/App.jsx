@@ -3,19 +3,22 @@ import {
     Routes,
     Route
 } from 'react-router-dom'
-// import Home from './pages/Home';
+import Nav from './components/Nav copy';
+import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Projects from './pages/Projects';
 import Technologies from './pages/Technologies';
-// import FooterComponent from './assets/components/FooterComponent';
-import Nav from './assets/components/Nav';
-import FooterComponent from './components/FooterComponent';
+import FooterComponent from './components/FooterComponent'
+
+// import Nav from './components/Nav';
+
 
 function App() {
     return (
         <HashRouter>
             <div className='App'>
+                {/* <Nav /> */}
                 <Nav />
                 <Routes>
                     <Route
@@ -37,7 +40,7 @@ function App() {
                         path="/technologies"
                         element={<Technologies />} />
                 </Routes>
-                <FooterComponent />                
+                <FooterComponent />
             </div>
         </HashRouter>
     );

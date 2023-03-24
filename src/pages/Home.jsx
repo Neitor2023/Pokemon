@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <div>
       <h1>Hola soy Home</h1>
-      <Link to="/Characters">Ir a Characters</Link>
+      <Link to="/ListsRickandMorty">Ir a Characters</Link>
     </div>
   )
 }
