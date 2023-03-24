@@ -3,13 +3,14 @@ import {
     Routes,
     Route
 } from 'react-router-dom'
-import Home from './assets/pages/Home';
-import About from './assets/pages/About';
-import Contact from './assets/pages/Contact';
-import Projects from './assets/pages/Projects';
-import Technologies from './assets/pages/Technologies';
-import FooterComponent from './assets/components/FooterComponent';
+// import Home from './pages/Home';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Projects from './pages/Projects';
+import Technologies from './pages/Technologies';
+// import FooterComponent from './assets/components/FooterComponent';
 import Nav from './assets/components/Nav';
+import FooterComponent from './components/FooterComponent';
 
 function App() {
     return (
@@ -36,7 +37,7 @@ function App() {
                         path="/technologies"
                         element={<Technologies />} />
                 </Routes>
-                <FooterComponent />
+                <FooterComponent />                
             </div>
         </HashRouter>
     );
