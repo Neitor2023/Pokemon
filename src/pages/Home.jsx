@@ -22,6 +22,7 @@ const Home = () => {
     <div>
       <h1>Home! Bienvenido a nuestra plataforma!</h1>
       <Link to="/Contact">Contacto</Link><br />
+      <Link to="/Characters">Characters</Link><br />
 
       <button onClick={ redirect } >Llevar a la seccion About</button>
 
