@@ -12,7 +12,8 @@ import Technologies from './pages/Technologies';
 import FooterComponent from './components/FooterComponent'
 import TeamDetail from './pages/TeamDetail';
 import Characters from './pages/Characters';
-import ListsRickandMorty from './pages/ListsRickandMorty';
+import RickMortyLists from './pages/RickMortyLists';
+import RickMortyDetail from './pages/RickMortyDetail';
 
 function App() {
     return (
@@ -46,8 +47,11 @@ function App() {
                         path='/characters'
                         element={<Characters />} />
                     <Route
-                        path='/listsRickandMorty'
-                        element={<ListsRickandMorty />} />
+                        path='/rickMortyLists'
+                        element={<RickMortyLists />} />
+                    <Route
+                        path='/rickMortyLists/:id'
+                        element={<RickMortyDetail />} />
                 </Routes>
                 <FooterComponent />
             </div>

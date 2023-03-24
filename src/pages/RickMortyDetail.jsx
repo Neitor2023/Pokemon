@@ -8,8 +8,8 @@ const RickMortyDetail = () => {
     useEffect(() => {
         axios
             .get(`https://rickandmortyapi.com/api/character/${id}`)
-            // .then((resp) => console.log(resp.data))
-            .then((resp) => setDataRick(resp.data))
+            .then((resp) => console.log(resp.data))
+            // .then((resp) => setDataRick(resp.data))
             .catch(error => console.error(error))
     }, [id])
 
