@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom'
 
-const ListsRickandMorty = () => {
+const RickMortyLists = () => {
     const navigate = useNavigate();
     const [dataRick, setDataRick] = useState([])
     useEffect(() => {
@@ -20,10 +20,10 @@ const ListsRickandMorty = () => {
     return (
         <div>
             <h1>Listado Rick and Morty</h1>
-            <Link to={`/ListsRickandMorty/${dataRick.info?.next}`} >
+            <Link to={`/RickMortyLists/${dataRick.info?.next}`} >
                 <li> Siguiente </li>
             </Link>
-            <Link to={`/ListsRickandMorty/${dataRick.info?.prev}`} >
+            <Link to={`/RickMortyLists/${dataRick.info?.prev}`} >
                 <li> Anterior </li>
             </Link>
             <ul>
@@ -39,4 +39,4 @@ const ListsRickandMorty = () => {
     );
 };
 
-export default ListsRickandMorty;
+export default RickMortyLists;
