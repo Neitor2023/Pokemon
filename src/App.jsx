@@ -15,17 +15,20 @@ import RickMortyDetail from './pages/RickMortyDetail';
 import MainLayout from './components/MainLayout';
 import Login from './pages/Login';
 import ProtectedRoutes from './components/ProtectedRoutes';
+import Pokedex from './pages/Pokedex';
+import PokedexItems from './pages/PokedexItems';
 
 function App() {
     return (
         <HashRouter>
-            <div className='App'>
+            {/* <div className='App'> */}
                 {/* <Nav /> */}
-                <Nav />
+                {/* <Nav /> */}
                 <Routes>
                     <Route
                         path="/"
                         element={<Home />} />
+                        {/* 
                     <Route
                         path="/about"
                         element={<About />} />
@@ -35,30 +38,31 @@ function App() {
                     <Route
                         path="/contact"
                         element={<Contact />} />
+                        */}
                     <Route
                         path='/Login'
                         element={<Login />} />
                     <Route element={<ProtectedRoutes />}>
-                        <Route
+                        {/* <Route
                             path='/characters'
-                            element={<Characters />} />
+                            element={<Characters />} /> */}
 
                         <Route element={<MainLayout />}>
                             <Route
-                                path='/rickMorty'
-                                element={<RickMortyLists />}
+                                path='/pokedex'
+                                element={<Pokedex />}
                             >
                             </Route>
                             <Route
-                                path='/rickMorty/:id'
-                                element={<RickMortyDetail />}
+                                path='/pokedex/:id'
+                                element={<PokedexItems />}
                             >
                             </Route>
                         </Route>
                     </Route>
                 </Routes>
-                <FooterComponent />
-            </div>
+                {/* <FooterComponent /> */}
+            {/* </div> */}
         </HashRouter>
     );
 }

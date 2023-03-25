@@ -1,11 +1,13 @@
 import { Navigate, Outlet } from "react-router-dom";
+import { useSelector } from 'react-redux';
 
 const ProtectedRoutes = () => {
-        if (100 > 10) {
-            return <Outlet />
-        } else {
-            return <Navigate to="/login" />
-        }
+    const trainer = useSelector(state => state.trainer)
+    if (trainer) {
+        return <Outlet />
+    } else {
+        return <Navigate to="/" />
+    }
 };
 
 export default ProtectedRoutes;
