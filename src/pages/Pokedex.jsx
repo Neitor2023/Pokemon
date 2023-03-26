@@ -16,7 +16,7 @@ const Pokedex = () => {
     
     const getPokedex = () => {
         axios
-        .get("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20")
+        .get("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=1281")
         .then((resp) => setPokedex(resp.data))
         .catch(error => console.error(error))
     }

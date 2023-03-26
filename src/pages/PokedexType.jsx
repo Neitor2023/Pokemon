@@ -17,7 +17,7 @@ const PokedexType = ({getType}) => {
             <h1>PokedexType</h1>
             <h2> {trainer} </h2>
             <select name="" id="" onChange={e => getType(e.target.value)}>
-                <option value="https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20">All Pokemons</option>
+                <option value="https://pokeapi.co/api/v2/pokemon/?offset=0&limit=1281">All Pokemons</option>
                 {pokeTypes.results?.map((poketype)=>(
                     <option value={poketype.url} key={poketype.url} >{poketype.name}</option>
                 ))
