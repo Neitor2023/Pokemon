@@ -2,12 +2,15 @@ import { createSlice } from '@reduxjs/toolkit';
 
 export const trainerSlice = createSlice({
     name: 'trainer',
-    initialState: '',
+    initialState: 'Romy',
     reducers: {
-
+        getTrainerName: (state, action) => {
+            const name = action.payload;
+            // console.log("trainerSlice")
+            return name
+        }
     }
 })
 
-export const { } = trainerSlice.actions;
-
+export const { getTrainerName } = trainerSlice.actions;
 export default trainerSlice.reducer;

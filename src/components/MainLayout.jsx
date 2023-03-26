@@ -4,7 +4,7 @@ const MainLayout = () => {
     return (
         <div className="general-container">
             <aside className="aside">
-                ASIDE
+                MainLayout
             </aside>
             <Outlet />
         </div>

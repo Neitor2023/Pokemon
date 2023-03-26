@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 const Login = () => {
     const [value, setValue] = useState("")
-
+    
     const tologin = e => {
         if (value === "password") {
             navigate("/about/")

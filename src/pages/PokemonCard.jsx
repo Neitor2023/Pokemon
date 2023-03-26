@@ -1,12 +1,21 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
-const PokemonCard = () => {
+const PokemonCard = ({ url }) => {
     const trainer = useSelector(state => state.trainer)
+    const [poke, setPoke] = useState({})
+    useEffect(() => {
+        axios
+            .get(url)
+            .then(resp => setPoke(resp.data))
+            .catch(error => console.error(error))
+    }, [])
+    console.log("llegue")
     return (
         <div>
-            <h1>PokemonCard</h1>
-            <h2> {trainer} </h2>
+            {poke.name}
+            <img width={"150px"} src={poke.sprites?.other.dream_world.front_default} alt="" />
         </div>
     );
 };
