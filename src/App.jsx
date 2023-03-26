@@ -8,6 +8,7 @@ import MainLayout from './components/MainLayout';
 import ProtectedRoutes from './components/ProtectedRoutes';
 import Pokedex from './pages/Pokedex';
 import PokedexItems from './pages/PokedexItems';
+import PokemonCard from './pages/PokemonCard';
 
 function App() {
     return (
@@ -26,6 +27,11 @@ function App() {
                             <Route
                                 path='/pokedex/:id'
                                 element={<PokedexItems />}
+                            >
+                            </Route>
+                            <Route
+                                path='/pokemoncard/:url'
+                                element={<PokemonCard />}
                             >
                             </Route>
                         </Route>

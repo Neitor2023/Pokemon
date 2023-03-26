@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import PokemonCard from './PokemonCard';
 import Pokedextype from './PokedexType'
 import axios from 'axios';
+import { Link } from 'react-router-dom'
 
 const PokedexsGet = ({ pokedex, setPokedex }) => {
     const trainer = useSelector(state => state.trainer)
@@ -33,15 +34,14 @@ const PokedexsGet = ({ pokedex, setPokedex }) => {
             {/* key={shortPokedex?.url ? shortPokedex?.url : shortPokedex.pokemons?.url}             */}
             <Pokedextype getType={getType} />
             {/* {pokedex.results?.map((poke) => ( */}
-            <ul key={Date.now()}>
-            {shortPokedex?.map((poke) => (
-                <li>
-                <PokemonCard 
-                url={poke.url ? poke?.url : poke.pokemons?.url} 
-                key={poke.url ? poke?.url : poke.pokemons?.url} 
-                />
-                </li>
-                ))
+            <ul>
+            {
+            shortPokedex?.map((poke) => (
+                    <Link key={Date.now()} to={`/pokemoncard/${poke.url ? poke?.url : poke.pokemons?.url}`} >
+                        <li> {poke.name} </li>
+                        
+                    </Link>
+                    ))
             }
             </ul>
         </div>
@@ -50,3 +50,7 @@ const PokedexsGet = ({ pokedex, setPokedex }) => {
 
 export default PokedexsGet;
 // <PokemonCard url={poke.url} key={poke.url} />
+{/* <PokemonCard 
+url={poke.url ? poke?.url : poke.pokemons?.url} 
+key={poke.url ? poke?.url : poke.pokemons?.url} 
+/> */}
