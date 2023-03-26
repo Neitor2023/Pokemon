@@ -2,16 +2,17 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
-const PokemonCard = ({ url, key }) => {
+const PokemonCard = ({ url }) => {
     const trainer = useSelector(state => state.trainer)
     const [poke, setPoke] = useState({})
+    
     useEffect(() => {
         axios
             .get(url)
             .then(resp => setPoke(resp.data))
             .catch(error => console.error(error))
     }, [])
-    // console.log("llegue")
+    
     return (
         <div>
             {poke.name}

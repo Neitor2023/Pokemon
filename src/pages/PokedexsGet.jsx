@@ -11,7 +11,7 @@ const PokedexsGet = ({ pokedex, setPokedex }) => {
         axios
             .get(url)
             .then(resp => setPokedex(resp.data))
-        console.log(url)
+        // console.log("url",url)
     }
 
     let shortPokedex
@@ -25,19 +25,28 @@ const PokedexsGet = ({ pokedex, setPokedex }) => {
             shortCount = pokedex.pokemon?.length
         }
     }
+
+    // console.log("shortPokedex ",shortPokedex)
+    console.log("pokedex", pokedex)
+
     rout()
-    console.log("ruta ", shortPokedex)
     return (
         <div>
             <h2> {trainer} </h2>
             <h1>PokedexsGet</h1>
-            {/* key={shortPokedex?.url ? shortPokedex?.url : shortPokedex.pokemons?.url}             */}
             <Pokedextype getType={getType} />
-            {/* {pokedex.results?.map((poke) => ( */}
             <ul>
                 {shortPokedex?.map((poke) => (
-                    <Link key={poke.url ? poke?.url : poke.pokemons?.url} to={`/pokemoncard/${poke.url ? poke?.url : poke.pokemons?.url}`} >
-                        <li> {poke.name} </li>
+                    <Link key={poke.url ? poke?.url : poke.pokemon?.url} to={`/pokemoncard/${poke.url ? poke?.url : poke.pokemon?.url}`} >
+                        <li>
+                            {/* punto
+                            {poke.pokemons?.length} <br />
+                            shortCount {shortCount} <br />
+                            shortPokedex {shortPokedex[0].name} */}
+                            <PokemonCard
+                            url={poke.url ? poke?.url : poke.pokemon?.url}
+                            />
+                        </li>
                     </Link>
                 ))
                 }
