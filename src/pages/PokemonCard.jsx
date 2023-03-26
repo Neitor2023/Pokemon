@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
-const PokemonCard = ({ url }) => {
+const PokemonCard = ({ url, key }) => {
     const trainer = useSelector(state => state.trainer)
     const [poke, setPoke] = useState({})
     useEffect(() => {
@@ -11,7 +11,7 @@ const PokemonCard = ({ url }) => {
             .then(resp => setPoke(resp.data))
             .catch(error => console.error(error))
     }, [])
-    console.log("llegue")
+    // console.log("llegue")
     return (
         <div>
             {poke.name}

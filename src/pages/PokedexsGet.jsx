@@ -25,7 +25,7 @@ const PokedexsGet = ({ pokedex, setPokedex }) => {
         }
     }
     rout()
-    // console.log("ruta ",shortPokedex)
+    console.log("ruta ",shortPokedex)
     return (
         <div>
             <h2> {trainer} </h2>
@@ -33,14 +33,13 @@ const PokedexsGet = ({ pokedex, setPokedex }) => {
             {/* key={shortPokedex?.url ? shortPokedex?.url : shortPokedex.pokemons?.url}             */}
             <Pokedextype getType={getType} />
             {/* {pokedex.results?.map((poke) => ( */}
-            <ul key={shortCount}>
+            <ul key={Date.now()}>
             {shortPokedex?.map((poke) => (
                 <li>
                 <PokemonCard 
                 url={poke.url ? poke?.url : poke.pokemons?.url} 
                 key={poke.url ? poke?.url : poke.pokemons?.url} 
                 />
-                // <PokemonCard url={poke.url} key={poke.url} />
                 </li>
                 ))
             }
@@ -50,3 +49,4 @@ const PokedexsGet = ({ pokedex, setPokedex }) => {
 };
 
 export default PokedexsGet;
+// <PokemonCard url={poke.url} key={poke.url} />
