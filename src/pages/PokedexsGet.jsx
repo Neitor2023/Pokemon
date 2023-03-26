@@ -11,7 +11,7 @@ const PokedexsGet = ({ pokedex, setPokedex }) => {
         axios
             .get(url)
             .then(resp => setPokedex(resp.data))
-            console.log(url)            
+        console.log(url)
     }
 
     let shortPokedex
@@ -22,11 +22,11 @@ const PokedexsGet = ({ pokedex, setPokedex }) => {
             shortCount = pokedex?.count
         } else {
             shortPokedex = pokedex?.pokemon
-            shortCount = pokedex.pokemon?.length        
+            shortCount = pokedex.pokemon?.length
         }
     }
     rout()
-    console.log("ruta ",shortPokedex)
+    console.log("ruta ", shortPokedex)
     return (
         <div>
             <h2> {trainer} </h2>
@@ -35,14 +35,12 @@ const PokedexsGet = ({ pokedex, setPokedex }) => {
             <Pokedextype getType={getType} />
             {/* {pokedex.results?.map((poke) => ( */}
             <ul>
-            {
-            shortPokedex?.map((poke) => (
-                    <Link key={Date.now()} to={`/pokemoncard/${poke.url ? poke?.url : poke.pokemons?.url}`} >
+                {shortPokedex?.map((poke) => (
+                    <Link key={poke.url ? poke?.url : poke.pokemons?.url} to={`/pokemoncard/${poke.url ? poke?.url : poke.pokemons?.url}`} >
                         <li> {poke.name} </li>
-                        
                     </Link>
-                    ))
-            }
+                ))
+                }
             </ul>
         </div>
     );
