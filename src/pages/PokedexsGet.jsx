@@ -6,6 +6,10 @@ import axios from 'axios';
 import { Link } from 'react-router-dom'
 
 const PokedexsGet = ({ pokedex, setPokedex }) => {
+    const [posts, setPosts ] = useState({})
+    const [currentPage, setCurrentPage ] = useState(1)
+    const [postsPerPage, setPostsPerPage ] = useState(10)
+    
     const [page, setPage ] = useState(1)
     const trainer = useSelector(state => state.trainer)
     const getType = (url) => {
@@ -51,6 +55,10 @@ const PokedexsGet = ({ pokedex, setPokedex }) => {
             <h2> {trainer} </h2>
             <h1>PokedexsGet</h1>
             <Pokedextype getType={getType} />
+            <div>
+                    <Pagination totalPosts={shortCount} postsPerPage={postsPerPage} setPage={page} currentPage={currentPage} />
+                </div>
+
             <ul>
                 {pokedexShow?.map((poke) => (
                     <Link key={poke.url ? poke?.url : poke.pokemon?.url} to={`/pokemoncard/${poke.url ? poke?.url : poke.pokemon?.url}`} >

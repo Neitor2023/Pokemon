@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 
-const Pagination = () => {
+const Pagination2 = () => {
     const trainer = useSelector(state => state.trainer)
     return (
         <div>
@@ -12,4 +12,4 @@ const Pagination = () => {
     );
 };
 
-export default Pagination;
+export default Pagination2;
