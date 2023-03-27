@@ -17,6 +17,7 @@ const PokedexsGet = ({ pokedex, setPokedex }) => {
             .get(url)
             .then(resp => setPokedex(resp.data))
         // console.log("url",url)
+        setCurrentPage(1)
     }
 
     let shortPokedex
