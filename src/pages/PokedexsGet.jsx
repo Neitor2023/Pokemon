@@ -5,6 +5,7 @@ import PokemonCard from './PokemonCard';
 import Pokedextype from './PokedexType'
 import Pagination from '../components/Pagination';
 import axios from 'axios';
+import PokemonCardHoloEffect from './PokemonCardHoloEffect';
 
 const PokedexsGet = ({ pokedex, setPokedex }) => {
     const [currentPage, setCurrentPage] = useState(1);
@@ -51,8 +52,12 @@ const PokedexsGet = ({ pokedex, setPokedex }) => {
         <div>
             <h2> {trainer} </h2>
             <h1>PokedexsGet</h1>
+            {/* 
+            <h4>//////// ANTES ////////</h4>
+            <PokemonCardHoloEffect /><br />
+            <h4>//////// DESPUES ////////</h4>
+            */}
             <Pokedextype getType={getType} />
-
             <div>
                 <Pagination
                     totalPosts={shortCount}
@@ -61,7 +66,6 @@ const PokedexsGet = ({ pokedex, setPokedex }) => {
                     currentPage={currentPage}
                 />
             </div>
-
             <ul>
                 {pokedexShow?.map((poke) => (
                     <Link key={poke.url ? poke?.url : poke.pokemon?.url} to={`/pokemoncard/${poke.url ? poke?.url : poke.pokemon?.url}`} >
