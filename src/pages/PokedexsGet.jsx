@@ -1,27 +1,28 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom'
 import PokemonCard from './PokemonCard';
 import Pokedextype from './PokedexType'
+import Pagination from '../components/Pagination';
 import axios from 'axios';
-import { Link } from 'react-router-dom'
 
 const PokedexsGet = ({ pokedex, setPokedex }) => {
-    const [posts, setPosts ] = useState({})
-    const [currentPage, setCurrentPage ] = useState(1)
-    const [postsPerPage, setPostsPerPage ] = useState(10)
-    
-    const [page, setPage ] = useState(1)
+    const [currentPage, setCurrentPage] = useState(1);
+    const [postsPerPage, setPostsPerPage] = useState(10);
+
+    const [page, setPage] = useState(1)
     const trainer = useSelector(state => state.trainer)
     const getType = (url) => {
         axios
-        .get(url)
-        .then(resp => setPokedex(resp.data))
+            .get(url)
+            .then(resp => setPokedex(resp.data))
         // console.log("url",url)
     }
-    
+
     let shortPokedex
-    let shortCount
     let pokedexShow
+    let totalPages
+    let shortCount
     let perPage
     let last_I
 
@@ -33,21 +34,17 @@ const PokedexsGet = ({ pokedex, setPokedex }) => {
             shortPokedex = pokedex?.pokemon
             shortCount = pokedex.pokemon?.length
         }
-        perPage = 20
-        last_I = perPage * page
-    
-        console.log("page ", page)
-        console.log("perPage ", perPage)
-        console.log("last_I ",last_I)
-        pokedexShow = shortPokedex?.slice(last_I - perPage, last_I)
-        
-        
-        // fullbuttons
+        // perPage = 20
+        // last_I = perPage * page
+        // totalPages = Math.ceil(shortCount / perPage)
+        // console.log("page ", page)
+        // console.log("perPage ", perPage)
+        // console.log("last_I ", last_I)
+        // pokedexShow = shortPokedex?.slice(last_I - perPage, last_I)
+        const lastPostIndex = currentPage * postsPerPage;
+        const firstPostIndex = lastPostIndex - postsPerPage;
+        pokedexShow = shortPokedex?.slice(firstPostIndex, lastPostIndex);
     }
-
-    // console.log("shortPokedex ",shortPokedex)
-    // const pokemonsToShow = shortRoutePokemons?.slice(lastIndex - perPage, lastIndex)
-    console.log("pokedexShow", pokedexShow)
 
     rout()
     return (
@@ -55,20 +52,22 @@ const PokedexsGet = ({ pokedex, setPokedex }) => {
             <h2> {trainer} </h2>
             <h1>PokedexsGet</h1>
             <Pokedextype getType={getType} />
+
             <div>
-                    <Pagination totalPosts={shortCount} postsPerPage={postsPerPage} setPage={page} currentPage={currentPage} />
-                </div>
+                <Pagination
+                    totalPosts={shortCount}
+                    postsPerPage={postsPerPage}
+                    setCurrentPage={setCurrentPage}
+                    currentPage={currentPage}
+                />
+            </div>
 
             <ul>
                 {pokedexShow?.map((poke) => (
                     <Link key={poke.url ? poke?.url : poke.pokemon?.url} to={`/pokemoncard/${poke.url ? poke?.url : poke.pokemon?.url}`} >
                         <li>
-                            {/* punto
-                            {poke.pokemons?.length} <br />
-                            shortCount {shortCount} <br />
-                            shortPokedex {shortPokedex[0].name} */}
                             <PokemonCard
-                            url={poke.url ? poke?.url : poke.pokemon?.url}
+                                url={poke.url ? poke?.url : poke.pokemon?.url}
                             />
                         </li>
                     </Link>
