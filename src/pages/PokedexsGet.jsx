@@ -16,7 +16,6 @@ const PokedexsGet = ({ pokedex, setPokedex }) => {
         axios
             .get(url)
             .then(resp => setPokedex(resp.data))
-        // console.log("url",url)
         setCurrentPage(1)
     }
 
