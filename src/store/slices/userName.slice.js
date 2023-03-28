@@ -4,13 +4,11 @@ export const userNameSlice = createSlice({
     name: 'userName',
     initialState: 'Romy',
     reducers: {
-        getTrainerName: (state, action) => {
-            const name = action.payload;
-            // console.log("trainerSlice")
-            return name
+        setNewValue: (state, action) => {
+            return action.payload;
         }
     }
 })
 
-export const { getTrainerName } = userNameSlice.actions;
+export const { setNewValue } = userNameSlice.actions;
 export default userNameSlice.reducer;

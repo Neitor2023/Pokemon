@@ -9,6 +9,7 @@ import ProtectedRoutes from './components/ProtectedRoutes';
 import Pokedex from './pages/Pokedex';
 import PokedexItems from './pages/PokedexItems';
 import PokemonCard from './pages/PokemonCard';
+import UserName from './components/userName';
 
 function App() {
     return (
@@ -17,6 +18,9 @@ function App() {
                     <Route
                         path="/"
                         element={<Home />} />
+                    <Route
+                        path="/username"
+                        element={<UserName />} />
                     <Route element={<ProtectedRoutes />}>
                         <Route element={<MainLayout />}>
                             <Route

@@ -1,14 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit';
-
-// Cambiamos mySlice por el nombre de nuestro slice (usersSlice, toDosSlice...)
-export const couterSlice = createSlice({
-    name: 'couter',
+export const counterSlice = createSlice({
+    name: 'counter',
     initialState: 0,
     reducers: {
-
+        increment: state => {
+            return state + 1;
+        },
+        decrement: state => {
+            return state - 1;
+        }
     }
-})
+});
 
-export const { } = couterSlice.actions;
+export const { increment, decrement } = counterSlice.actions // Las exportamos
 
-export default couterSlice.reducer;
+export default counterSlice.reducer

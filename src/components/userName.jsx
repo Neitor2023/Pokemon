@@ -10,3 +10,5 @@ const userName = () => {
         </div>
     );
 };
+
+export default userName;

@@ -19,9 +19,10 @@ const PokemonCard = ({ url }) => {
             <section>
             <div 
             className="card animated"
-            style={{ backgroundImage: `url(${poke.sprites?.other.dream_world.front_default})` }}
+            style={{ backgroundImage: `url(${poke.sprites?.other.dream_world.front_default ? poke.sprites?.other.dream_world.front_default : "https://cdn2.bulbagarden.net/upload/1/17/Cardback.jpg"})` }}
             >
-            {poke.name}
+            
+            
             {/* <img width={"150px"} src={poke.sprites?.other.dream_world.front_default} alt="" /> */}
 
             </div>
