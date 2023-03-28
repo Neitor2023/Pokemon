@@ -49,16 +49,16 @@ const PokedexsGet = ({ pokedex, setPokedex }) => {
 
     rout()
     return (
-        <div>
-            <h2> {trainer} </h2>
-            <h1>PokedexsGet</h1>
+        <div className='Container'>
+            {/* <h2> {trainer} </h2> */}
             {/* 
             <h4>//////// ANTES ////////</h4>
             <PokemonCardHoloEffect /><br />
             <h4>//////// DESPUES ////////</h4>
-            */}
+        */}
             <Pokedextype getType={getType} />
-            <div>
+            <div className='Title'>
+                <h1>PokedexsGet</h1>
                 <Pagination
                     totalPosts={shortCount}
                     postsPerPage={postsPerPage}
@@ -68,18 +68,18 @@ const PokedexsGet = ({ pokedex, setPokedex }) => {
             </div >
             <div className="cards">
 
-            {/* <ul> */}
+                {/* <ul> */}
                 {pokedexShow?.map((poke) => (
                     <Link key={poke.url ? poke?.url : poke.pokemon?.url} to={`/pokemoncard/${poke.url ? poke?.url : poke.pokemon?.url}`} >
                         {/* <li> */}
-                            <PokemonCard
-                                url={poke.url ? poke?.url : poke.pokemon?.url}
-                                />
+                        <PokemonCard
+                            url={poke.url ? poke?.url : poke.pokemon?.url}
+                        />
                         {/* </li> */}
                     </Link>
                 ))
-            }
-            {/* </ul> */}
+                }
+                {/* </ul> */}
             </div>
         </div>
     );
