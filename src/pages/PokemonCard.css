@@ -18,12 +18,19 @@
 }
 
 .card {
+    /*     
+    width: 200px;
+    height: 200px;
     width: 61.5vw;
     height: 100vw;
-    width: clamp(200px, 61vh, 18vw);
-    height: clamp(280px, 85vh, 25.2vw);
+    */
+    width: clamp(200px, 61vw, 9vw);
+    height: clamp(140px, 85vh, 12.2vh);
 
-    position: relative;
+    /* width: clamp(200px, 61vh, 18vw);
+    height: clamp(280px, 85vh, 25.2vw); */
+
+    /* position: relative; */
     overflow: hidden;
     margin: 20px;
     overflow: hidden;
@@ -44,7 +51,7 @@
 
     background-color: #040712;
     /* background-image: var(--front); */
-    background-size: cover;
+    background-size: 70%;
     background-repeat: no-repeat;
     background-position: 50% 50%;
     transform-origin: center;
@@ -135,7 +142,7 @@
 .card:after {
     opacity: 1;
     background-image: url("https://assets.codepen.io/13471/sparkles.gif"),
-        url(https://assets.codepen.io/13471/holo.png),
+        url("https://assets.codepen.io/13471/holo.png"),
         linear-gradient(125deg, #ff008450 15%, #fca40040 30%, #ffff0030 40%, #00ff8a20 60%, #00cfff40 70%, #cc4cfa50 85%);
     background-position: 50% 50%;
     background-size: 160%;
@@ -283,15 +290,15 @@
     }
 }
 
-.card.eevee:hover {
+.card:hover {
     box-shadow:
         0 0 30px -5px white,
         0 0 10px -2px white,
         0 55px 35px -20px rgba(0, 0, 0, 0.5);
 }
 
-.card.eevee:hover:before,
-.card.eevee.active:before {
+.card:hover:before,
+.card.active:before {
     background-image: linear-gradient(115deg,
             transparent 20%,
             var(--color1) 36%,
@@ -393,14 +400,14 @@ p {
     margin-top: 5px;
     font-weight: 200;
 }
-
+/* 
 #app {
     position: relative;
-}
+} */
 
-.demo,
 .cards {
-
+    /* 
+    */
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
@@ -409,18 +416,22 @@ p {
     grid-template-rows: repeat( 
         auto-fit,minmax(
             200px, 1fr)
-    );
-    gap: 5rem;
+            );
+            gap: 5rem;
+            
+            /* 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        */
 
-    /* display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-
-    perspective: 2000px;
-    position: relative;
-    z-index: 1; */
-    transform: translate3d(0.1px, 0.1px, 0.1px)
+perspective: 2000px;
+position: relative;
+z-index: 1; 
+transform: translate3d(0.1px, 0.1px, 0.1px)
+/*
+*/
 }
 
 .demo {

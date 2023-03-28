@@ -5,7 +5,7 @@ import PokemonCard from './PokemonCard';
 import Pokedextype from './PokedexType'
 import Pagination from '../components/Pagination';
 import axios from 'axios';
-import PokemonCardHoloEffect from './PokemonCardHoloEffect';
+// import PokemonCardHoloEffect from './PokemonCardHoloEffect';
 
 const PokedexsGet = ({ pokedex, setPokedex }) => {
     const [currentPage, setCurrentPage] = useState(1);
@@ -65,19 +65,22 @@ const PokedexsGet = ({ pokedex, setPokedex }) => {
                     setCurrentPage={setCurrentPage}
                     currentPage={currentPage}
                 />
-            </div>
-            <ul>
+            </div >
+            <div className="cards">
+
+            {/* <ul> */}
                 {pokedexShow?.map((poke) => (
                     <Link key={poke.url ? poke?.url : poke.pokemon?.url} to={`/pokemoncard/${poke.url ? poke?.url : poke.pokemon?.url}`} >
-                        <li>
+                        {/* <li> */}
                             <PokemonCard
                                 url={poke.url ? poke?.url : poke.pokemon?.url}
-                            />
-                        </li>
+                                />
+                        {/* </li> */}
                     </Link>
                 ))
-                }
-            </ul>
+            }
+            {/* </ul> */}
+            </div>
         </div>
     );
 };

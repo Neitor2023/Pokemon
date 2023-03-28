@@ -16,7 +16,7 @@ const PokemonCard = ({ url }) => {
 
     return (
         <div>
-            <section className="cards">
+            <section>
             <div 
             className="card animated"
             style={{ backgroundImage: `url(${poke.sprites?.other.dream_world.front_default})` }}
