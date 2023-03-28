@@ -11,7 +11,10 @@ const PokemonCard = ({ url }) => {
     useEffect(() => {
         axios
             .get(url)
-            .then(resp => setPoke(resp.data))
+            .then(resp => {
+                setPoke(resp.data)
+                getColor(poke.game_indices?.[1].version.name)
+            })
             .catch(error => console.error(error))
             // getColor()
         }, [])
@@ -21,19 +24,20 @@ const PokemonCard = ({ url }) => {
         // console.log("data", poke.stats?.[1].stat.name)
         // console.log("data", poke.stats?.[0].base_stat)
         console.log("data", poke.game_indices?.[1].version.name)
-        // const getColor = () =>{
-        //     const colorData = poke.game_indices?.[1].version.name
-        //     if (colorData) {
-        //         setColor(colorData)
-        //         console.log("color ",color)
-        //     }
-        // }
+        const getColor = (colorData) =>{
+            if (colorData) {
+                console.log("colorData ",colorData)
+            } else {
+                console.log("colorData fallo ",colorData)
+                setColor("black")
+            }
+        }
         // getColor
     return (
         
         <div 
         className="card animated"
-        style={{ backgroundColor: color }}
+        style={{ backgroundColor: poke.game_indices?.[1].version.name }}
         // style={{ backgroundImage: `url(${poke.sprites?.other.dream_world.front_default ? poke.sprites?.other.dream_world.front_default : "https://cdn2.bulbagarden.net/upload/1/17/Cardback.jpg"})` }}
         // style={{ backgroundImage: `url("https://cdn2.bulbagarden.net/upload/1/17/Cardback.jpg")` }}
         >
@@ -66,8 +70,8 @@ const PokemonCard = ({ url }) => {
             <div className='detail'><strong>{poke.stats?.[0].stat.name} : </strong>{poke.stats?.[0].base_stat}</div>
             <div className='detail'><strong>{poke.stats?.[1].stat.name} : </strong>{poke.stats?.[1].base_stat}</div>
             <div className='detail'><strong>{poke.stats?.[2].stat.name} : </strong>{poke.stats?.[2].base_stat}</div>
-            <div className='detail'><strong>{poke.stats?.[3].stat.name} : </strong>{poke.stats?.[3].base_stat}</div>
-            <div className='detail'><strong>{poke.stats?.[4].stat.name} : </strong>{poke.stats?.[4].base_stat}</div>
+            <div className='detail'><strong>{(poke.stats?.[3].stat.name).replace("-"," ")} : </strong>{poke.stats?.[3].base_stat}</div>
+            <div className='detail'><strong>{(poke.stats?.[4].stat.name).replace("-"," ")} : </strong>{poke.stats?.[4].base_stat}</div>
             <div className='detail'><strong>{poke.stats?.[5].stat.name} : </strong>{poke.stats?.[5].base_stat}</div>
 
 

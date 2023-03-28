@@ -535,6 +535,7 @@ transform: translate3d(0.1px, 0.1px, 0.1px)
     /* background-color: lightgreen; */
 }
 .detail {
+    text-transform: capitalize;
     /* line-height: 1%; */
     margin-top: 2%;
     /* margin: auto; */
