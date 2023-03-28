@@ -6,44 +6,72 @@ import './PokemonCard.css'
 const PokemonCard = ({ url }) => {
     const trainer = useSelector(state => state.trainer)
     const [poke, setPoke] = useState({})
+    const [color, setColor ] = useState("black")
 
     useEffect(() => {
         axios
             .get(url)
             .then(resp => setPoke(resp.data))
             .catch(error => console.error(error))
-    }, [])
-// console.log("data", poke.types?.[0].type.name)
-console.log("data", poke.stats?.[1].stat.name)
-// console.log("data", poke.stats?.[0].base_stat)
-console.log("data", poke)
+            // getColor()
+        }, [])
+            
+            
+            // console.log("data", poke.types?.[0].type.name)
+        // console.log("data", poke.stats?.[1].stat.name)
+        // console.log("data", poke.stats?.[0].base_stat)
+        console.log("data", poke.game_indices?.[1].version.name)
+        // const getColor = () =>{
+        //     const colorData = poke.game_indices?.[1].version.name
+        //     if (colorData) {
+        //         setColor(colorData)
+        //         console.log("color ",color)
+        //     }
+        // }
+        // getColor
     return (
         
-        <div className='container_card'>
         <div 
         className="card animated"
+        style={{ backgroundColor: color }}
         // style={{ backgroundImage: `url(${poke.sprites?.other.dream_world.front_default ? poke.sprites?.other.dream_world.front_default : "https://cdn2.bulbagarden.net/upload/1/17/Cardback.jpg"})` }}
-        style={{ backgroundImage: `url("https://cdn2.bulbagarden.net/upload/1/17/Cardback.jpg")` }}
+        // style={{ backgroundImage: `url("https://cdn2.bulbagarden.net/upload/1/17/Cardback.jpg")` }}
         >
 
-            {poke.name} <br />
-            Type : 
-            {poke.types?.[0].type.name} <br />
+            {/* <p><strong>{poke.name}</strong></p><br />
+            <><strong>Type : </strong>{poke.types?.[0].type.name}<br />
+            <strong>{poke.stats?.[0].stat.name} : </strong>{poke.stats?.[0].base_stat}<br />
+            <strong>{poke.stats?.[1].stat.name} : </strong>{poke.stats?.[1].base_stat}<br />
+            <strong>{poke.stats?.[2].stat.name} : </strong>{poke.stats?.[2].base_stat}<br />
+            <strong>{poke.stats?.[5].stat.name} : </strong>{poke.stats?.[5].base_stat}</p><br /> */}
+
+            {/* <p><strong>{poke.name}</strong></p><br />
+            <p><strong>Type : </strong>{poke.types?.[0].type.name}</p><br />
+            <p><strong>{poke.stats?.[0].stat.name} : </strong>{poke.stats?.[0].base_stat}</p><br />
+            <p><strong>{poke.stats?.[1].stat.name} : </strong>{poke.stats?.[1].base_stat}</p><br />
+            <p><strong>{poke.stats?.[2].stat.name} : </strong>{poke.stats?.[2].base_stat}</p><br />
+            <p><strong>{poke.stats?.[5].stat.name} : </strong>{poke.stats?.[5].base_stat}</p><br /> */}
+             
             {/* {poke.types?.[1].type.name ? poke.types?.[0].type.name : ""} */}            
-            {poke.stats?.[0].stat.name} : {poke.stats?.[0].base_stat} <br />
+            {/* {poke.stats?.[0].stat.name} : {poke.stats?.[0].base_stat} <br />
             {poke.stats?.[1].stat.name} : {poke.stats?.[1].base_stat} <br />
             {poke.stats?.[2].stat.name} : {poke.stats?.[2].base_stat} <br />
-            {poke.stats?.[5].stat.name} : {poke.stats?.[5].base_stat}
-            {/* <img className='img_card' width={"100px"} src={"https://cdn2.bulbagarden.net/upload/1/17/Cardback.jpg"} alt="" /> */}
-            <img className='img_card' width={"100px"} src={poke.sprites?.other.dream_world.front_default} alt="" />
-        </div>
-        <div 
-        className="img_pokedex"
-        style={{ backgroundImage: `url("https://cdn2.bulbagarden.net/upload/1/17/Cardback.jpg")` }}
-        >
+            {poke.stats?.[5].stat.name} : {poke.stats?.[5].base_stat} */}
+            <img className='img_card' src={poke.sprites?.other.dream_world.front_default}/>
+            <img className='img_back' src={"https://cdn2.bulbagarden.net/upload/1/17/Cardback.jpg"} alt="" />
+
+            <div className='pok_name'><strong>{poke.name}</strong></div>
+            <div className='detail'><strong>type : </strong>{poke.types?.[0].type.name}</div>
+            <div className='detail'><strong>specie : </strong>{poke.species?.name}</div>
+            <div className='detail'><strong>{poke.stats?.[0].stat.name} : </strong>{poke.stats?.[0].base_stat}</div>
+            <div className='detail'><strong>{poke.stats?.[1].stat.name} : </strong>{poke.stats?.[1].base_stat}</div>
+            <div className='detail'><strong>{poke.stats?.[2].stat.name} : </strong>{poke.stats?.[2].base_stat}</div>
+            <div className='detail'><strong>{poke.stats?.[3].stat.name} : </strong>{poke.stats?.[3].base_stat}</div>
+            <div className='detail'><strong>{poke.stats?.[4].stat.name} : </strong>{poke.stats?.[4].base_stat}</div>
+            <div className='detail'><strong>{poke.stats?.[5].stat.name} : </strong>{poke.stats?.[5].base_stat}</div>
+
 
         </div>
-            </div>
     );
 };
 

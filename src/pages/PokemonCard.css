@@ -33,8 +33,10 @@
 }
 
 .card {
+    text-align: left;
+    padding: 1.5rem;
     width: 250px;
-    height: 273px;
+    height: 280px;
     /*     
     width: 61.5vw;
     height: 100vw;
@@ -49,7 +51,7 @@
     /* position: relative; */
     overflow: hidden;
     margin: 20px;
-    overflow: hidden;
+    /* overflow: hidden; */
     z-index: 10;
     touch-action: none;
     border-radius: 5% / 3.5%;
@@ -60,16 +62,15 @@
     0 0 5px 0px rgba(255, 255, 255, 0),
     0 55px 35px -20px rgba(0, 0, 0, 0.5);
 
-    transition: transform 0.5s ease,
-    box-shadow 0.2s ease;
-    will-change: transform,
-    filter;
-
+    transition: transform 0.5s ease;
+    box-shadow: 0.2s ease;
+    /* will-change: transform, filter; */
     background-color: #040712;
     /* background-image: url("https://cdn2.bulbagarden.net/upload/1/17/Cardback.jpg"); */
     background-size: 50%;
     background-repeat: no-repeat;
     background-position: 90% 90%;
+    
     transform-origin: center;
     --color1: #ec9bb6;
     --color2: #ccac6f;
@@ -86,18 +87,34 @@
         height: clamp(18vw, 85vh, 25.2vw);
     }
 }
-.img_card{
-    margin-top:10%;
+.img_back{
+    width: 130px;
+    height: 130px;
     border-radius: 50%;
+    margin-top:-4%;
+    margin-left:-4%;
+    position: absolute;
+    opacity: 0.4;
+}
+.img_card{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    margin-top:-3%;
+    margin-left:-2.5%;
+    z-index: 9;
 }
 .card:hover {
-    box-shadow:
-        -20px -20px 30px -25px var(--color1),
-        20px 20px 30px -25px var(--color2),
-        -7px -7px 10px -5px var(--color1),
-        7px 7px 10px -5px var(--color2),
-        0 0 13px 4px rgba(255, 255, 255, 0.3),
-        0 55px 35px -20px rgba(0, 0, 0, 0.5);
+    /* 
+    box-shadow: inset 0 0 0 1px rgba(white, 0.4), 0 25px 15px -10px rgba(0, 0, 0, 0.5);
+    */
+box-shadow:
+-20px -20px 30px -25px var(--color1),
+20px 20px 30px -25px var(--color2),
+-7px -7px 10px -5px var(--color1),
+7px 7px 10px -5px var(--color2),
+0 0 13px 4px rgba(255, 255, 255, 0.3),
+0 55px 35px -20px rgba(0, 0, 0, 0.5);
 }
 .container_card{
     
@@ -355,8 +372,6 @@
     animation: none;
 }
 
-.demo:after,
-.demo:before,
 .card:nth-of-type(1)::after,
 .card:nth-of-type(1)::before,
 .card:nth-of-type(2)::after,
@@ -367,25 +382,21 @@
     opacity: 1;
 }
 
-.demo:after,
-.demo:before,
 .card:nth-of-type(1)::after,
 .card:nth-of-type(1)::before{
     display: none;
 }
 
-.demo .card:nth-of-type(2) {
+.card:nth-of-type(2) {
     background: none;
 }
 
-.demo:after,
-.demo:before,
 .card:nth-of-type(2)::after,
 .card:nth-of-type(2)::before{
     display: none;
 }
 
-.demo .card:nth-of-type(3) {
+.card:nth-of-type(3) {
     background: none;
 }
 
@@ -511,21 +522,45 @@ transform: translate3d(0.1px, 0.1px, 0.1px)
 .card:nth-child(4)::before{
     animation-delay: 0.75s;
 }
-
-p {
-    font-weight: 400;
+.pok_name{
+    border-top-left-radius: 10px ;
+    border-top-right-radius: 10px ;
+    border-bottom-left-radius: 10px ;
+    border-bottom-right-radius: 10px ;
+    text-align: right;
+    text-transform: capitalize;
+    font-size:xx-large;
+    border-bottom: 10px solid;
+    margin-top: 15%;
+    /* background-color: lightgreen; */
+}
+.detail {
+    /* line-height: 1%; */
+    margin-top: 2%;
+    /* margin: auto; */
+    /* padding: 5%; */
+    text-indent: 5%;
+    /* text-size-adjust: auto; */
+    width: auto;
+    border-top-left-radius: 10px ;
+    border-top-right-radius: 10px ;
+    border-bottom-left-radius: 10px ;
+    border-bottom-right-radius: 10px ;
+    background-color: lightgreen;
+    color: black;
+    /* font-weight: 400;
     font-size: 18px;
     padding: 1em;
     background: rgba(0, 0, 0, 0.3);
-    margin-top: 0;
+    margin-top: 0; */
 }
 
 p.bottom {
-    position: absolute;
+    /* position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    margin-bottom: 0;
+    margin-bottom: 0; */
 }
 
 p a {
