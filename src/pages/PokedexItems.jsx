@@ -9,7 +9,7 @@ const PokedexItems = () => {
     const navigate = useNavigate()
 
     const { id } = useParams();
-    
+    console.log("PokedexItems id ",id)
     useEffect(() => {
         axios
             .get(`https://pokeapi.co/api/v2/pokemon/${id}/`)
