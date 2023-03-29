@@ -2,10 +2,10 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import './PokemonCard.css'
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const PokemonCard = ({ url }) => {
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
     const trainer = useSelector(state => state.trainer)
     const [poke, setPoke] = useState({})
 
@@ -26,10 +26,8 @@ const PokemonCard = ({ url }) => {
         <div
             className="card animated"
             style={{ backgroundColor: poke.game_indices?.[1].version.name }}
-            // onClick={() => navigate(`pokedexitems/${poke.id}`)}
-            // onClick={() => navigate(`contact/`)}
+            onClick={() => navigate(`/pokedexitems/${poke.id}`)}
             >
-
             <img className='img_card' src={poke.sprites?.other.dream_world.front_default} />
             <img className='img_back' src={"https://cdn2.bulbagarden.net/upload/1/17/Cardback.jpg"} alt="" />
 

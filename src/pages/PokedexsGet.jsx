@@ -67,26 +67,37 @@ const PokedexsGet = ({ pokedex, setPokedex }) => {
                 />
             </div >
             <div className="cards">
-
-                {/* <ul> */}
                 {pokedexShow?.map((poke) => (
-                    // <Link key={poke.url ? poke?.url : poke.pokemon?.url} to={`/pokemoncard/${poke.url ? poke?.url : poke.pokemon?.url}`} ></Link>
-                    <Link key={poke.url ? poke?.url : poke.pokemon?.url} to={`/pokedexitems/${poke.id}`} >
-                        {/* <li> */}
+                    <ul key={poke.url ? poke?.url : poke.pokemon?.url}>
                         <PokemonCard
                             url={poke.url ? poke?.url : poke.pokemon?.url}
                         />
-                        {/* </li> */}
-                    </Link>
+                    </ul>
                 ))
                 }
-                {/* </ul> */}
             </div>
         </div>
     );
 };
 
 export default PokedexsGet;
+{/*
+
+                // <ul> 
+                                {pokedexShow?.map((poke) => (
+                    // <Link key={poke.url ? poke?.url : poke.pokemon?.url} to={`/pokemoncard/${poke.url ? poke?.url : poke.pokemon?.url}`} ></Link>
+                    // <Link key={poke.url ? poke?.url : poke.pokemon?.url} to={`/pokedexitems/${poke.id}`} >
+                        // <li> 
+                        //<PokemonCard
+                            url={poke.url ? poke?.url : poke.pokemon?.url}
+                        // />
+                        // </li> 
+                    // </Link>
+                // ))
+                // }
+                // </ul> 
+ 
+
 // <PokemonCard url={poke.url} key={poke.url} />
 {/* <PokemonCard 
 url={poke.url ? poke?.url : poke.pokemons?.url} 
