@@ -70,7 +70,8 @@ const PokedexsGet = ({ pokedex, setPokedex }) => {
 
                 {/* <ul> */}
                 {pokedexShow?.map((poke) => (
-                    <Link key={poke.url ? poke?.url : poke.pokemon?.url} to={`/pokemoncard/${poke.url ? poke?.url : poke.pokemon?.url}`} >
+                    // <Link key={poke.url ? poke?.url : poke.pokemon?.url} to={`/pokemoncard/${poke.url ? poke?.url : poke.pokemon?.url}`} ></Link>
+                    <Link key={poke.url ? poke?.url : poke.pokemon?.url} to={`/pokedexitems/${poke.id}`} >
                         {/* <li> */}
                         <PokemonCard
                             url={poke.url ? poke?.url : poke.pokemon?.url}

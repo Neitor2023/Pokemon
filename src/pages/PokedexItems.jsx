@@ -5,11 +5,11 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 const PokedexItems = () => {
     const trainer = useSelector(state => state.trainer)
-    const [poke, setPoke ] = useState({})
+    const [poke, setPoke] = useState({})
     const navigate = useNavigate()
 
     const { id } = useParams();
-    console.log("PokedexItems id ",id)
+    console.log("PokedexItems id ", id)
     useEffect(() => {
         axios
             .get(`https://pokeapi.co/api/v2/pokemon/${id}/`)

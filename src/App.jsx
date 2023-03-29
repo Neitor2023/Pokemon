@@ -10,6 +10,7 @@ import Pokedex from './pages/Pokedex';
 import PokedexItems from './pages/PokedexItems';
 import PokemonCard from './pages/PokemonCard';
 import UserName from './components/userName';
+import Contact from './pages/Contact';
 
 function App() {
     return (
@@ -21,6 +22,9 @@ function App() {
                     <Route
                         path="/username"
                         element={<UserName />} />
+                    <Route
+                        path="/contact"
+                        element={<Contact />} />
                     <Route element={<ProtectedRoutes />}>
                         <Route element={<MainLayout />}>
                             <Route
@@ -29,7 +33,7 @@ function App() {
                             >
                             </Route>
                             <Route
-                                path='/pokedex/:id'
+                                path='/pokedexitems/:id'
                                 element={<PokedexItems/>}
                             >
                             </Route>
