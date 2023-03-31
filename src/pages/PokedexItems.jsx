@@ -8,6 +8,7 @@ const PokedexItems = () => {
     const trainer = useSelector(state => state.trainer)
     const [poke, setPoke] = useState({})
     const navigate = useNavigate()
+    const [ sear , setSear ] = useState({})
 
     const { id } = useParams();
     // console.log("PokedexItems id ", id)
@@ -22,14 +23,23 @@ const PokedexItems = () => {
     }, [])
 
     const Search = () => {
-        // console.log("fallo de busqueda ",id)
         axios
-            .get(`https://pokeapi.co/api/v2/berry/${id}/`)
-            .then(resp => setPoke(resp.data))
-            .catch(error => {
-                // Search()
-                console.error(error)
-            } )
+        .get("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=1281")
+        .then(resp => {
+            setSear(resp.data)
+            locateName()
+        })
+        .catch(error => console.error(error))
+
+        const locateName = () => {
+            const locateUrl = sear.filter(name => name = id)
+            if (locateUrl) {
+                alert("Busquedq Exitosa")
+            } else {
+                alert("No se encontro nada")
+            }
+        }    
+
     }
 
     // console.log("data Item ", poke)
@@ -69,7 +79,7 @@ const PokedexItems = () => {
 
                 <div className="container-stats">
                     <div className="stats">
-                        {/* <div className="stat-group">
+                        <div className="stat-group">
                             <span>Hp</span>
                             <div Style={`width:${poke.stats?.[0].base_stat}%`} className="progress-bar"></div>
                             <span className="counter-stat">{poke.stats?.[0].base_stat} %</span>
@@ -98,7 +108,7 @@ const PokedexItems = () => {
                             <span>Speed</span>
                             <div Style={`width:${poke.stats?.[5].base_stat}%`} className="progress-bar"></div>
                             <span className="counter-stat">{poke.stats?.[5].base_stat} %</span>
-                        </div> */}
+                        </div>
                     </div>
                 </div>
             </main>
