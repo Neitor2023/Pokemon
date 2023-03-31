@@ -25,12 +25,12 @@ const Home = () => {
         value={name}
         placeholder='Enter your name'
         onChange={e => setName(e.target.value)}
-      />          
+        />
         </div>
         <div className="half"></div>
         <div className="half_2"></div>
         <div className="white">
-          <button className='Btn_b' onClick={() => irPokedex()}>Go</button>
+        <button className='Btn_b' onClick={() => irPokedex()}>Go</button>
         </div>
       </div>
       
