@@ -8,7 +8,8 @@ const PokedexItems = () => {
     const trainer = useSelector(state => state.trainer)
     const [poke, setPoke] = useState({})
     const navigate = useNavigate()
-    const [ sear , setSear ] = useState({})
+    const [ sear , setSear ] = useState([])
+    const [ swSear, setSwSear ] = useState(false)
 
     const { id } = useParams();
     // console.log("PokedexItems id ", id)
@@ -22,26 +23,55 @@ const PokedexItems = () => {
             } )
     }, [])
 
+    const locateName = () => {
+        console.log("Esperimento", sear)
+        const regex = `/[${id}]/g`;
+        const found = sear.name.match(regex);
+        
+        console.log("found ",found);
+        // Expected output: Array ["T", "I"]
+        
+        if (sear.find(id) != -1) {
+            console.log("Bandera Por Fin se encontro")    
+        } else {
+            console.log("Bandera Fallo de busqueda sear -1")
+        }
+
+        const locateUrl = sear.name.some(elem => elem === id)
+        console.log("Bandera locateUrl",locateUrl)
+        if (locateUrl) {
+            // alert("Busquedq Exitosa")
+            console.log("Busquedq Exitosa")
+        } else {
+            // alert("No se encontro nada")
+            console.log("No se encontro nada")
+        }
+    }    
+
+
     const Search = () => {
         axios
         .get("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=1281")
         .then(resp => {
             setSear(resp.data)
-            locateName()
+            setSwSear(true)
         })
         .catch(error => console.error(error))
-
-        const locateName = () => {
-            const locateUrl = sear.filter(name => name = id)
-            if (locateUrl) {
-                alert("Busquedq Exitosa")
-            } else {
-                alert("No se encontro nada")
-            }
-        }    
-
     }
 
+        if (swSear) {
+            // console.log("Esperimento", sear.results)
+            console.log("Esperimento", id)            
+            const regex = `/[${id}]/g`;
+            const found = sear.results.match(regex);
+            console.log("Resultado ",found)
+    
+        }
+    // const rrr = () => {
+
+
+    // }
+    // rrr()
     // console.log("data Item ", poke)
     return (
         <div className='main'>
