@@ -65,22 +65,21 @@ const PokedexItems = () => {
             // const regex = `/[${id}]/g`;
             // const found = sear.results.split(regex);
             // const found = sear.results.split(regex).join("");
+
             const found = sear.results.filter(nam => {
-                nam.name === "caterpie");
+                // nam.name === "caterpie");
                 let orden = nam.name.toLowerCase().split("").sort()
                 let deso = id.toLowerCase().split("").sort()
                 let desor = deso.map(l=> orden.includes(l)?l:"").join("").split("")
-                const numOrd = orden.map((letra, i, arr) => ((orden.split(letra).length - 1) > 1 &&(arr[i] == arr[i+(ordenado.split(letra).length - 1)-1])||(ordenado.split(letra).length - 1) == 1?(orden.split(letra).length - 1):"")).join("")                
-                const numDeso = desor.map((letra, i, arr) => ((desor.split(letra).length - 1) > 1 && (desor.split(letra).length - 1) >= (ordenado.split(letra).length - 1)&&(arr[i] == arr[i+(desordenado.split(letra).length - 1)-1])||(desor.split(letra).length - 1) == 1?(orden.split(letra).length - 1):"")).join("")
-                return numDeso >= numOrd
-            }
-
+                const numOrd = orden.map((letra, i, arr) => ((ordenado.split(letra).length - 1) > 1 &&(arr[i] == arr[i+(ordenado.split(letra).length - 1)-1])||(ordenado.split(letra).length - 1) == 1?(ordenado.split(letra).length - 1):"")).join("")    
+                const numDeso = desor.map((letra, i, arr) => ((desordenado.split(letra).length - 1) > 1 && (desordenado.split(letra).length - 1) >= (ordenado.split(letra).length - 1)&&(arr[i] == arr[i+(desordenado.split(letra).length - 1)-1])||(desordenado.split(letra).length - 1) == 1?(ordenado.split(letra).length - 1):"")).join("")                return numDeso >= numOrd
+            })
         
 
             // const found = sear.results.filter(nam => nam.name === regex);
 
+            
             console.log("Resultado ",found)
-    
         }
     // const rrr = () => {
 
