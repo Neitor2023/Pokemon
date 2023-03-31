@@ -8,85 +8,16 @@ const PokedexItems = () => {
     const trainer = useSelector(state => state.trainer)
     const [poke, setPoke] = useState({})
     const navigate = useNavigate()
-    const [ sear , setSear ] = useState([])
-    const [ swSear, setSwSear ] = useState(false)
-
+        
     const { id } = useParams();
-    // console.log("PokedexItems id ", id)
+    
     useEffect(() => {
         axios
             .get(`https://pokeapi.co/api/v2/pokemon/${id}/`)
             .then(resp => setPoke(resp.data))
-            .catch(error => {
-                Search()
-                // console.error(error)
-            } )
+            .catch(error => console.error(error))
     }, [])
 
-    const locateName = () => {
-        console.log("Esperimento", sear)
-        const regex = `/[${id}]/g`;
-        const found = sear.name.match(regex);
-        
-        console.log("found ",found);
-        // Expected output: Array ["T", "I"]
-        
-        if (sear.find(id) != -1) {
-            console.log("Bandera Por Fin se encontro")    
-        } else {
-            console.log("Bandera Fallo de busqueda sear -1")
-        }
-
-        const locateUrl = sear.name.some(elem => elem === id)
-        console.log("Bandera locateUrl",locateUrl)
-        if (locateUrl) {
-            // alert("Busquedq Exitosa")
-            console.log("Busquedq Exitosa")
-        } else {
-            // alert("No se encontro nada")
-            console.log("No se encontro nada")
-        }
-    }    
-
-
-    const Search = () => {
-        axios
-        .get("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=1281")
-        .then(resp => {
-            setSear(resp.data)
-            setSwSear(true)
-        })
-        .catch(error => console.error(error))
-    }
-
-        if (swSear) {
-            // console.log("Esperimento", sear.results)
-            console.log("Esperimento", id)  
-            // const regex = `/[${id}]/g`;
-            // const found = sear.results.split(regex);
-            // const found = sear.results.split(regex).join("");
-
-            const found = sear.results.filter(nam => {
-                // nam.name === "caterpie");
-                let orden = nam.name.toLowerCase().split("").sort()
-                let deso = id.toLowerCase().split("").sort()
-                let desor = deso.map(l=> orden.includes(l)?l:"").join("").split("")
-                const numOrd = orden.map((letra, i, arr) => ((ordenado.split(letra).length - 1) > 1 &&(arr[i] == arr[i+(ordenado.split(letra).length - 1)-1])||(ordenado.split(letra).length - 1) == 1?(ordenado.split(letra).length - 1):"")).join("")    
-                const numDeso = desor.map((letra, i, arr) => ((desordenado.split(letra).length - 1) > 1 && (desordenado.split(letra).length - 1) >= (ordenado.split(letra).length - 1)&&(arr[i] == arr[i+(desordenado.split(letra).length - 1)-1])||(desordenado.split(letra).length - 1) == 1?(ordenado.split(letra).length - 1):"")).join("")                return numDeso >= numOrd
-            })
-        
-
-            // const found = sear.results.filter(nam => nam.name === regex);
-
-            
-            console.log("Resultado ",found)
-        }
-    // const rrr = () => {
-
-
-    // }
-    // rrr()
-    // console.log("data Item ", poke)
     return (
         <div className='main'>
             <main className='container-main'>
