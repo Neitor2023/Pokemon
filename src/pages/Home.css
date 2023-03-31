@@ -1,0 +1,79 @@
+.container{
+    width: 100px;
+    margin: auto;
+    padding: 100px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.red{
+    background-color: red;
+    width: 300px;
+    height: 150px;
+    border-radius: 150px 150px 0px 0px;
+    border-color: black;
+    border-width: 10px;
+    border-style: groove;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+}
+
+.white{
+    background-color: white;
+    width: 300px;
+    height: 150px;
+    border-radius: 0px 0px 150px 150px ;
+    border-color: black;
+    border-width: 20px;
+    border-style: groove;
+    border-bottom: none;
+    border-right: none;
+    border-left: none;
+    padding: 1rem;
+}
+
+.half{
+    position:absolute;
+    background-color: white;
+    width: 60px;
+    height: 60px;
+    z-index: 2;
+    border-radius: 100px;
+    border-color: black;
+    border-style: ridge;
+}
+
+.half_2{
+    transition: 1s;
+    position:absolute;
+    background-color: white;
+    width: 20px;
+    height: 20px;
+    z-index: 2;
+    border-radius: 100px;
+    border-color: black;
+    border-style: ridge;
+    box-shadow: 0 0 10px black;
+}
+.half2:hover{
+    background-color: lightblue;
+}
+
+.input_b{
+    margin-top: 55px;
+    background-color:lightcoral;
+    color: white;
+    border-color: red;
+    height: 50px;
+    width: 200px;
+    font-size: 21px;
+    text-align: center;
+    border-radius: 50px 50px 50px 50px;
+}
+
+.Btn_b{
+    margin-top: 30px;
+}

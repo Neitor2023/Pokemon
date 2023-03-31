@@ -3,7 +3,12 @@
 :root {
     --color1: rgb(0, 231, 255);
     --color2: rgb(255, 0, 231);
-    --back: url(https://cdn2.bulbagarden.net/upload/1/17/Cardback.jpg);
+    --color1: #ec9bb6;
+    --color2: #ccac6f;
+    --color3: #69e4a5;
+    --color4: #8ec5d6;
+    --color5: #b98cce;
+    /* --back: url(https://cdn2.bulbagarden.net/upload/1/17/Cardback.jpg);
     --charizard1: #fac;
     --charizard2: #ddccaa;
     --charizardfront: url(https://assets.codepen.io/13471/charizard-gx.webp);
@@ -15,7 +20,7 @@
     --eeveefront: url(https://assets.codepen.io/13471/eevee-gx.webp);
     --mewtwo1: #efb2fb;
     --mewtwo2: #acc6f8;
-    --mewtwofront: url(https://assets.codepen.io/13471/mewtwo-gx.webp);
+    --mewtwofront: url(https://assets.codepen.io/13471/mewtwo-gx.webp); */
 }
 
 .Container{
@@ -29,7 +34,6 @@
 .Title{
     width: 100%;
     height: 170px;
-    background-color: lightblue;
     position: relative;
 }
 
@@ -37,7 +41,7 @@
     text-align: left;
     padding: 1.5rem;
     width: 250px;
-    height: 330px;
+    height: 270px;
     /*     
     width: 61.5vw;
     height: 100vw;
@@ -73,11 +77,6 @@
     background-position: 90% 90%;
     
     transform-origin: center;
-    --color1: #ec9bb6;
-    --color2: #ccac6f;
-    --color3: #69e4a5;
-    --color4: #8ec5d6;
-    --color5: #b98cce;
 
     @media screen and (min-width: 600px) {
         width: 61vh;
@@ -92,17 +91,17 @@
     width: 130px;
     height: 130px;
     border-radius: 50%;
-    margin-top:-4%;
-    margin-left:-4%;
+    margin-top:-6%;
+    margin-left:-6%;
     position: absolute;
-    opacity: 0.4;
+    opacity: 0.7;
 }
 .img_card{
     position: absolute;
     width: 100px;
     height: 100px;
-    margin-top:-3%;
-    margin-left:-2.5%;
+    margin-top:-5%;
+    margin-left:-4.5%;
     z-index: 9;
 }
 .card:hover {
@@ -130,7 +129,7 @@ box-shadow:
     background-repeat: no-repeat;
     background-position: 90% 90%;
 }
-.card.charizard {
+/* .card.charizard {
     --color1: var(--charizard1);
     --color2: var(--charizard2);
     --front: var(--charizardfront);
@@ -155,7 +154,7 @@ box-shadow:
     --color4: #8ec5d6;
     --color5: #b98cce;
     --front: var(--eeveefront);
-}
+} */
 
 .card:before,
 .card:after {
@@ -355,7 +354,7 @@ box-shadow:
             var(--color5) 64%,
             transparent 80%);
 }
-
+/* 
 .demo .card {
     background-image: var(--back);
     font-size: 2vh
@@ -373,7 +372,7 @@ box-shadow:
     height: 27.5vh;
     box-shadow: inset 0 0 0 1px rgba(white, 0.4), 0 25px 15px -10px rgba(0, 0, 0, 0.5);
     animation: none;
-}
+} */
 
 .card:nth-of-type(1)::after,
 .card:nth-of-type(1)::before,
@@ -403,8 +402,6 @@ box-shadow:
     background: none;
 }
 
-.demo:after,
-.demo:before,
 .card:nth-of-type(3)::after,
 .card:nth-of-type(3)::before{
     display: none;
@@ -423,14 +420,11 @@ body {
     padding: 0;
     z-index: 1;
     transform: translate3d(0, 0, 0.1px);
-}
-
-body {
     color: white;
-    background-color: #333844;
     font-family: "Heebo", sans-serif;
     text-align: center;
 }
+
 
 h1 {
     display: block;
@@ -545,7 +539,7 @@ transform: translate3d(0.1px, 0.1px, 0.1px)
     /* padding: 5%; */
     text-indent: 5%;
     /* text-size-adjust: auto; */
-    width: auto;
+    /* width: auto; */
     border-top-left-radius: 10px ;
     border-top-right-radius: 10px ;
     border-bottom-left-radius: 10px ;
