@@ -15,8 +15,23 @@ const PokedexItems = () => {
         axios
             .get(`https://pokeapi.co/api/v2/pokemon/${id}/`)
             .then(resp => setPoke(resp.data))
-            .catch(error => console.error(error))
+            .catch(error => {
+                Search()
+                // console.error(error)
+            } )
     }, [])
+
+    const Search = () => {
+        // console.log("fallo de busqueda ",id)
+        axios
+            .get(`https://pokeapi.co/api/v2/berry/${id}/`)
+            .then(resp => setPoke(resp.data))
+            .catch(error => {
+                // Search()
+                console.error(error)
+            } )
+    }
+
     // console.log("data Item ", poke)
     return (
         <div className='main'>
@@ -54,7 +69,7 @@ const PokedexItems = () => {
 
                 <div className="container-stats">
                     <div className="stats">
-                        <div className="stat-group">
+                        {/* <div className="stat-group">
                             <span>Hp</span>
                             <div Style={`width:${poke.stats?.[0].base_stat}%`} className="progress-bar"></div>
                             <span className="counter-stat">{poke.stats?.[0].base_stat} %</span>
@@ -83,7 +98,7 @@ const PokedexItems = () => {
                             <span>Speed</span>
                             <div Style={`width:${poke.stats?.[5].base_stat}%`} className="progress-bar"></div>
                             <span className="counter-stat">{poke.stats?.[5].base_stat} %</span>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </main>

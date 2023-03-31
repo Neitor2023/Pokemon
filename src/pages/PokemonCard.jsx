@@ -16,7 +16,7 @@ const PokemonCard = ({ url }) => {
             .catch(error => console.error(error))
     }, [])
 
-    console.log("data id ", poke)
+    // console.log("data id ", poke)
     // console.log("data", poke.stats?.[1].stat.name)
     // console.log("data", poke.stats?.[0].base_stat)
     // console.log("data", poke.game_indices?.[1].version.name)

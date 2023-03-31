@@ -27,7 +27,7 @@ const Pokedex = () => {
             <h1>Pokedex</h1>
             <h2> {trainer} </h2>
             <input type="text" value={search} onChange={(e => setSearch(e.target.value))} />
-            <button onClick={()=> navigate(`/pokedex/${search}`)}>Search</button>
+            <button onClick={()=> navigate(`/pokedexitems/${search}`)}>Search</button>
             <PokedexsGet pokedex={pokedex} setPokedex={setPokedex}/>
         </div>
     );

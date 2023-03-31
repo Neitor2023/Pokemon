@@ -10,37 +10,44 @@ import Pokedex from './pages/Pokedex';
 import PokedexItems from './pages/PokedexItems';
 import PokemonCard from './pages/PokemonCard';
 import UserName from './components/userName';
+import TeamDetail from './pages/TeamDetail'
 
 function App() {
     return (
         <HashRouter>
-                <Routes>
-                    <Route
-                        path="/"
-                        element={<Home />} />
-                    <Route
-                        path="/username"
-                        element={<UserName />} />
-                    <Route element={<ProtectedRoutes />}>
-                        <Route element={<MainLayout />}>
-                            <Route
-                                path='/pokedex'
-                                element={<Pokedex />}
-                            >
-                            </Route>
-                            <Route
-                                path='/pokedexitems/:id'
-                                element={<PokedexItems/>}
-                            >
-                            </Route>
-                            <Route
-                                path='/pokemoncard/:url'
-                                element={<PokemonCard />}
-                            >
-                            </Route>
+            <Routes>
+                <Route
+                    path="/"
+                    element={<Home />} />
+                <Route
+                    path="/username"
+                    element={<UserName />} />
+                <Route element={<ProtectedRoutes />}>
+                    <Route element={<MainLayout />}>
+                        <Route
+                            path='/pokedex'
+                            element={<Pokedex />}
+                        >
+                        </Route>
+                        <Route
+                            path='/pokedex/:name'
+                            element={<TeamDetail />}
+                        >
+
+                        </Route>
+                        <Route
+                            path='/pokedexitems/:id'
+                            element={<PokedexItems />}
+                        >
+                        </Route>
+                        <Route
+                            path='/pokemoncard/:url'
+                            element={<PokemonCard />}
+                        >
                         </Route>
                     </Route>
-                </Routes>
+                </Route>
+            </Routes>
         </HashRouter>
     );
 }
