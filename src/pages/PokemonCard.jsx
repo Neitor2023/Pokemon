@@ -31,18 +31,18 @@ const PokemonCard = ({ url }) => {
             <img className='img_card' src={poke.sprites?.other.dream_world.front_default} />
             <img className='img_back' src={"https://cdn2.bulbagarden.net/upload/1/17/Cardback.jpg"} alt="" />
 
-            <div className='pok_name'><strong>{poke.name}</strong></div>
+            <div className='pok_name'><strong className='style_name' >{poke.name}</strong></div>
             <div className='detail'><strong>type : </strong>{poke.types?.[0].type.name} {poke.types?.length == 2 ? poke.types?.[1].type.name : ""}</div>
             <div className='detail'><strong>specie : </strong>{poke.species?.name}</div>
             <div className='detail'><strong>height : </strong>{poke.height}m</div>
             <div className='detail'><strong>weight : </strong>{poke.weight}Kg.</div>
-            {/* 
             <div className='detail'><strong>{poke.stats?.[0].stat.name} : </strong>{poke.stats?.[0].base_stat}</div>
             <div className='detail'><strong>{poke.stats?.[1].stat.name} : </strong>{poke.stats?.[1].base_stat}</div>
             <div className='detail'><strong>{poke.stats?.[2].stat.name} : </strong>{poke.stats?.[2].base_stat}</div>
             <div className='detail'><strong>{poke.stats?.[3].stat.name ? (poke.stats?.[3].stat.name).replace("-", " ") : ""} : </strong>{poke.stats?.[3].base_stat}</div>
             <div className='detail'><strong>{poke.stats?.[4].stat.name ? (poke.stats?.[4].stat.name).replace("-", " ") : ""} : </strong>{poke.stats?.[4].base_stat}</div>
             <div className='detail'><strong>{poke.stats?.[5].stat.name} : </strong>{poke.stats?.[5].base_stat}</div>
+            {/* 
             */}
         </div>
     );

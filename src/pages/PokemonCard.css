@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
 :root {
     --color1: rgb(0, 231, 255);
@@ -8,19 +8,6 @@
     --color3: #69e4a5;
     --color4: #8ec5d6;
     --color5: #b98cce;
-    /* --back: url(https://cdn2.bulbagarden.net/upload/1/17/Cardback.jpg);
-    --charizard1: #fac;
-    --charizard2: #ddccaa;
-    --charizardfront: url(https://assets.codepen.io/13471/charizard-gx.webp);
-    --pika1: #54a29e;
-    --pika2: #a79d66;
-    --pikafront: url(https://assets.codepen.io/13471/pikachu-gx.webp);
-    --eevee1: #efb2fb;
-    --eevee2: #acc6f8;
-    --eeveefront: url(https://assets.codepen.io/13471/eevee-gx.webp);
-    --mewtwo1: #efb2fb;
-    --mewtwo2: #acc6f8;
-    --mewtwofront: url(https://assets.codepen.io/13471/mewtwo-gx.webp); */
 }
 
 .Container{
@@ -94,7 +81,7 @@
     margin-top:-6%;
     margin-left:-6%;
     position: absolute;
-    opacity: 0.7;
+    opacity: 0.5;
 }
 .img_card{
     position: absolute;
@@ -446,7 +433,7 @@ p {
     flex-wrap: wrap;
     align-content: flex-start;
     border: #E5f2ff;
-    padding: 7%;
+    padding: 4%;
     grid-template-rows: repeat( 
         auto-fit,minmax(
             200px, 1fr)
@@ -529,7 +516,16 @@ transform: translate3d(0.1px, 0.1px, 0.1px)
     font-size:xx-large;
     border-bottom: 10px solid;
     margin-top: 15%;
-    /* background-color: lightgreen; */
+}
+.style_name{
+    color: transparent;
+    font-size: 40px;
+    background-color: yellow;
+    background-position: center;
+    background-size: cover;
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 1.5px black;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 .detail {
     text-transform: capitalize;

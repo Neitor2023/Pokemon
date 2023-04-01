@@ -7,10 +7,12 @@ import axios from 'axios';
 
 const PokedexsGet = ({ pokedex, setPokedex }) => {
     const [currentPage, setCurrentPage] = useState(1);
-    const [postsPerPage, setPostsPerPage] = useState(10);
-
+    const [postsPerPage, setPostsPerPage] = useState(12);
+    const [numpages, SetNumpages] = useState(4)
     const [page, setPage] = useState(1)
+
     const trainer = useSelector(state => state.trainer)
+
     const getType = (url) => {
         axios
             .get(url)
@@ -34,13 +36,24 @@ const PokedexsGet = ({ pokedex, setPokedex }) => {
         const firstPostIndex = lastPostIndex - postsPerPage;
         pokedexShow = shortPokedex?.slice(firstPostIndex, lastPostIndex);
     }
-
     rout()
+
+    function changeNumPage(e) {
+        setPostsPerPage(e.target.value)
+    }
     return (
         <div className='Container'>
             <Pokedextype getType={getType} />
             <div className='Title'>
                 <h1>PokedexsGet</h1>
+                <p>Seleccione cantidad de pokemones : <select value={postsPerPage} onChange={changeNumPage}>
+                    <option>4</option>
+                    <option>8</option>
+                    <option>12</option>
+                    <option>16</option>
+                    <option>20</option>
+                </select></p>
+
                 <Pagination
                     totalPosts={shortCount}
                     postsPerPage={postsPerPage}
