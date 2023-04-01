@@ -45,14 +45,13 @@ const PokedexsGet = ({ pokedex, setPokedex }) => {
         <div className='Container'>
             <Pokedextype getType={getType} />
             <div className='Title'>
-                <h1>PokedexsGet</h1>
-                <p>Seleccione cantidad de pokemones : <select value={postsPerPage} onChange={changeNumPage}>
+                <h3>Seleccione cantidad de pokemones : <select value={postsPerPage} onChange={changeNumPage}>
                     <option>4</option>
                     <option>8</option>
                     <option>12</option>
                     <option>16</option>
                     <option>20</option>
-                </select></p>
+                </select></h3>
 
                 <Pagination
                     totalPosts={shortCount}

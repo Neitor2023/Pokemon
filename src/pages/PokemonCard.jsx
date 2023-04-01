@@ -16,11 +16,6 @@ const PokemonCard = ({ url }) => {
             .catch(error => console.error(error))
     }, [])
 
-    // console.log("data id ", poke)
-    // console.log("data", poke.stats?.[1].stat.name)
-    // console.log("data", poke.stats?.[0].base_stat)
-    // console.log("data", poke.game_indices?.[1].version.name)
-
     return (
 
         <div
@@ -36,12 +31,12 @@ const PokemonCard = ({ url }) => {
             <div className='detail'><strong>specie : </strong>{poke.species?.name}</div>
             <div className='detail'><strong>height : </strong>{poke.height}m</div>
             <div className='detail'><strong>weight : </strong>{poke.weight}Kg.</div>
-            <div className='detail'><strong>{poke.stats?.[0].stat.name} : </strong>{poke.stats?.[0].base_stat}</div>
+            {/* <div className='detail'><strong>{poke.stats?.[0].stat.name} : </strong>{poke.stats?.[0].base_stat}</div>
             <div className='detail'><strong>{poke.stats?.[1].stat.name} : </strong>{poke.stats?.[1].base_stat}</div>
             <div className='detail'><strong>{poke.stats?.[2].stat.name} : </strong>{poke.stats?.[2].base_stat}</div>
             <div className='detail'><strong>{poke.stats?.[3].stat.name ? (poke.stats?.[3].stat.name).replace("-", " ") : ""} : </strong>{poke.stats?.[3].base_stat}</div>
             <div className='detail'><strong>{poke.stats?.[4].stat.name ? (poke.stats?.[4].stat.name).replace("-", " ") : ""} : </strong>{poke.stats?.[4].base_stat}</div>
-            <div className='detail'><strong>{poke.stats?.[5].stat.name} : </strong>{poke.stats?.[5].base_stat}</div>
+            <div className='detail'><strong>{poke.stats?.[5].stat.name} : </strong>{poke.stats?.[5].base_stat}</div> */}
             {/* 
             */}
         </div>

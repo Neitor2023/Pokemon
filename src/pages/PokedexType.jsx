@@ -14,16 +14,14 @@ const PokedexType = ({ getType }) => {
 
     return (
         <div>
-            <h1>PokedexType</h1>
-            <h2> {trainer} </h2>
-            <p>Seleccione tipos de pokemones :
+            <h3>Seleccione tipos de pokemones :
                 <select name="" id="" onChange={e => getType(e.target.value)}>
                     <option value="https://pokeapi.co/api/v2/pokemon/?offset=0&limit=1281">All Pokemons</option>
                     {pokeTypes.results?.map((poketype) => (
                         <option value={poketype.url} key={poketype.url} >{poketype.name}</option>
                     ))
                     }
-                </select></p>
+                </select></h3>
         </div>
     );
 };
