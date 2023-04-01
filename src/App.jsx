@@ -10,7 +10,6 @@ import Pokedex from './pages/Pokedex';
 import PokedexItems from './pages/PokedexItems';
 import PokemonCard from './pages/PokemonCard';
 import UserName from './components/userName';
-import TeamDetail from './pages/TeamDetail'
 
 function App() {
     return (
@@ -28,12 +27,6 @@ function App() {
                             path='/pokedex'
                             element={<Pokedex />}
                         >
-                        </Route>
-                        <Route
-                            path='/pokedex/:name'
-                            element={<TeamDetail />}
-                        >
-
                         </Route>
                         <Route
                             path='/pokedexitems/:id'
